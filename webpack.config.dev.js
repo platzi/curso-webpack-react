@@ -4,15 +4,13 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 /**@type {import('webpack').Configuration} */
 module.exports = {
 	entry: "./src/index.js",
-	mode:"production",
+    mode:"development",
 	output:{
 		path: path.resolve(__dirname,'dist'),
-		filename: '[name].[contenthash].js',
-		clean: true,
-		publicPath: '/'
+		filename: 'main.js'
 	},
 	resolve: {
-    	extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx'],
 		alias:{
 			"@": path.resolve(__dirname, 'src')
 		}
@@ -41,7 +39,4 @@ module.exports = {
     plugins: [new HtmlWebpackPlugin({
         template: path.resolve(__dirname, "./public/index.html"),
      })],
-	 optimization: {
-		minimize: true,
-	}
 }

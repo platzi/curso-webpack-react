@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack serve --mode development",
-    "build": "webpack --mode production"
+    "dev": "webpack serve --config webpack.config.dev.js",
+    "build": "webpack --config webpack.config.js",
+    "serve:prod": "webpack --config webpack.config.js && npx serve dist -s"
   },
   "repository": {
     "type": "git",
