@@ -9,7 +9,8 @@ module.exports = {
   mode: 'development',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'main.js'
+    filename: 'main.js',
+    assetModuleFilename: 'images/[name][ext]'
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -24,6 +25,10 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader, 'css-loader'
         ]
+      },
+      {
+        test: /\.(png|jpg|svg|jpeg|webp)$/,
+        type: 'asset/resource'
       },
       {
         test: /\.(js|jsx)$/,

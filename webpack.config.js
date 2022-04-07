@@ -11,6 +11,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash].js',
+    assetModuleFilename: 'images/[hash][ext]',
     clean: true,
     publicPath: '/'
   },
@@ -28,6 +29,10 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           'css-loader'
         ]
+      },
+      {
+        test: /\.(png|jpg|svg|jpeg|webp)$/,
+        type: 'asset/resource'
       },
       {
         test: /\.(js|jsx)$/,
